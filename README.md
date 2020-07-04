@@ -2,7 +2,7 @@
 
 ## Abstract
 
-The purpose of this repository is to organize resources for implementation of a laser fence that targets insects, including the mosquito and spotted lanternfly. A research question is to determine if work done on laser fences that target mosquitos in Africa could be adapted to spotted lanterfly in Pennsylvania.
+The purpose of this repository is to organize resources for implementation of a laser fence that targets insects, including the mosquito and spotted lanternfly. A research question is to determine if work done on laser fences that target mosquitos in Africa could be adapted to spotted lanterfly in Pennsylvania. Note that the original mosquito use case was popularized in 2010 and described as a failure in 2016 (Schiller, 2016).
 
 ## Mosqiuto Characterization
 
@@ -27,6 +27,8 @@ Anonymous. (2020, July 4). "How Does Mosquito Laser Work? Here's How To Build/Bu
 Kare, J. (2010, Apr 30). "Backyard Star Wars." *IEEE Spectrum*. Retrieved July 4, 2020, from https://spectrum.ieee.org/consumer-electronics/gadgets/backyard-star-wars
 
 Myhrvold, N. (Feb 2010). "Could this laster zap malaria?" *TED Talks*. Retrieved July 4, 2020, from https://www.ted.com/talks/nathan_myhrvold_could_this_laser_zap_malaria
+
+Schiller, B. (2016, May 3). "What Happened To The Mosquito-Zapping Laser That Was Going To Stop Malaria?" *Fast Company*. Retrieved July 4, 2020, from https://www.fastcompany.com/3059127/what-happened-to-the-mosquito-zapping-laser-that-was-going-to-stop-malaria
 
 Wikipedia contributors. (2020, May 16). Mosquito laser. In *Wikipedia, The Free Encyclopedia*. Retrieved 14:31, July 4, 2020, from https://en.wikipedia.org/w/index.php?title=Mosquito_laser&oldid=956918485
 
