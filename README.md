@@ -15,7 +15,7 @@ Speed: < 1 meter per second (Kare 2010)
 
 "As early as July, adults can be seen, and they mate and lay eggs from late September through the onset of winter." (Wikipedia 2020) Therefore, a system that target adults should be placed into service from July through the onset of winter.
 
-Aberage FLying Altitude: TODO  
+Aberage Flying Altitude: TODO  
 Supply: "killem killem all" (https://youtu.be/1g82I7w3ENU)  
 Size: TODO - Translate to requirements for identification  
 Speed: TODO - Translate to requirements for response time  
