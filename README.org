@@ -10,16 +10,18 @@ adapted to spotted lanternfly in Pennsylvania. Note that the original
 mosquito use case was popularized in 2010 and described as a failure
 in 2016 (Schiller, 2016).
 
-** Mosquito Characterization
+** Target Characterizations
+*** Mosquito
 
-| Characteristic          | Value                | Source     |
-|-------------------------+----------------------+------------|
-| Average Flying Altitude | 2 meters             | Kare, 2010 |
-| Supply                  | ∞                    | Kare, 2010 |
-| Size                    | < 2 centimeters      | Kare, 2010 |
-| Speed                   | < 1 meter per second | Kare, 2010 |
+| Characteristic           | Value                | Source     |
+|--------------------------+----------------------+------------|
+| Average Flying Altitude  | 2 meters             | Kare, 2010 |
+| Supply                   | ∞                    | Kare, 2010 |
+| Size                     | < 2 centimeters      | Kare, 2010 |
+| Speed                    | < 1 meter per second | Kare, 2010 |
+| Lethal Energy Dose Req'd | > 50 mJ in 3 ms      | Kare, 2010 |
 
-** Spotted Lanternfly Characterization
+*** Spotted Lanternfly
 
 "As early as July, adults can be seen, and they mate and lay eggs from
 late September through the onset of winter." (Wikipedia 2020)
@@ -33,18 +35,19 @@ from July through the onset of winter.
 | Size                    | TODO                |                              |
 | Speed                   | TODO                |                              |
 
-TODO - Translate size to requirements for identification  
+TODO - Translate size to requirements for identification
 
-TODO - Translate speed to requirements for response time  
+TODO - Translate speed to requirements for response time
 
-** Candidate Design - Nuke the Entire Site from Orbit
+** Candidate Designs
+*** Nuke the Entire Site from Orbit
 
 This is the only way to be sure (https://youtu.be/nnHmUk_J6xQ). Note
 that this is assumed to be preferrable to nerve gas. However, the
 installation has a substantial dollar value attached to it and the
 action may not be authorized.
 
-** Candidate Design - Optical Recognition Laser Turret
+*** Optical Recognition Laser Turret
 
 A candidate design could be a single laser turret. Optical image
 recognition might be used for target identification. A mounted laser
@@ -54,20 +57,23 @@ spotted lanternfly. The turret would be manned and operated in a
 semi-autonomous mode. Semi-autonomous deployment would mitigate safety
 and weather challenges.
 
-*** Bill of Materials
+**** Bill of Materials
 
-- [[https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/][NVIDIA Jetson Nano]] : Master control system and image processing for
+- [[https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/][NVIDIA Jetson Nano]] :: Master control system and image processing for
   target identification. [[https://www.microcenter.com/product/620641/nvidia-jetson-nano-developer-kit---rev-2][$99.00 at Micro Center]]
-- [[http://www.meccano.com/product/778988618080/meccano---super-construction-set][Erector by Meccano - Super Construction Set]] : Turret assembly and
+- [[http://www.meccano.com/product/778988618080/meccano---super-construction-set][Erector by Meccano - Super Construction Set]] :: Turret assembly and
   component positioning. [[https://www.amazon.com/Meccano-Construction-Motorized-Building-Education/dp/B07C4ZWC1F/ref=sr_1_2?dchild=1&keywords=meccano&qid=1593880029&sr=8-2&th=1][$199.00 (v1) at Amazon]]
-- Laser : TODO
-- [[https://www.sparkfun.com/products/retired/15430][Leopard Imaging 145 FOV Camera]] : Note that this camera has been
+- [[https://www.sparkfun.com/products/retired/15430][Leopard Imaging 145 FOV Camera]] :: Note that this camera has been
   discontinued. It was originally included in the older [[https://learn.sparkfun.com/tutorials/assembly-guide-for-sparkfun-jetbot-ai-kit][SparkFun
   JetBot AI Kit]].
-- [[https://www.sparkfun.com/products/15449][Edimax 2-in-1 WiFi and Bluetooth 4.0 Adapter]] : Connectivity to the
+- [[https://www.sparkfun.com/products/15449][Edimax 2-in-1 WiFi and Bluetooth 4.0 Adapter]] :: Connectivity to the
   NVIDIA Jetson Nano. [[https://www.sparkfun.com/products/15449][$19.95 at SparkFun]].
-- Motors : TODO
-- Power : TODO
+- Laser :: TODO
+- Galvo :: TODO
+- Power :: TODO
+- Cabinet :: TODO waterproofing enclosure with windows for sensors and
+  lasers. The enclosure could have a mask/shutter to prevent firing
+  beams ouside of the desired area.
 
 | Component                                    |  Price |
 |----------------------------------------------+--------|
@@ -77,11 +83,15 @@ and weather challenges.
 | Total                                        | 118.95 |
 #+TBLFM: $2=vsum(@2..@-1)
 
-*** Software System
+**** Software System
 
 - [[https://developer.nvidia.com/embedded/jetpack][NVIDIA JetPack SDK]]
 - [[https://www.python.org/][Python]]
 - [[https://opencv.org/][OpenCV]]
+
+*** Retroreflective Perimeter Fence
+
+This is the solution described in detail in Kare, 2010.
 
 ** References
 
