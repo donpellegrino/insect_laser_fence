@@ -1,0 +1,45 @@
+* Deployment
+
+This document describes packaging and deployment of the system
+components. It also describes the connectivity issues for development,
+testing, monitoring, and operation.
+
+** Eastern Pennsylvania Proving Grounds
+
+*** Connectivity
+
+Connectivity options include Bluetooth, Wifi, and Ethernet.
+
+**** Ethernet
+
+Eastern Pennsylvania Proving Grounds : 200 Mbps bidirectional, dynamic
+IP. No hardline to NVIDIA Jetson Nano.
+
+**** Wifi
+
+[[https://docs.ubuntu.com/core/en/stacks/network/network-manager/docs/configure-wifi-connections][Configure WiFi Connections]], Ubuntu NetworkManager documentation.
+
+#+BEGIN_SRC bash
+nmcli device
+nmcli radio wifi on
+nmcli device wifi list
+nmcli device wifi connect <SSID> password <PASSWORD>
+#+END_SRC
+
+Connectivity options:
+
+| DEVICE | TYPE     | STATE       | CONNECTION |
+|--------+----------+-------------+------------|
+| wlan0  | wifi     | connected   | <SSID>     |
+| eth0   | ethernet | unavailable | --         |
+| l4tbr0 | bridge   | unmanaged   | --         |
+| dummy0 | dummy    | unmanaged   | --         |
+| rndis0 | ethernet | unmanaged   | --         |
+| usb0   | ethernet | unmanaged   | --         |
+| lo     | loopback | unmanaged   | --         |
+
+Wifi best-case signal (physically located next to wireless gateway):
+
+| IN-USE | SSID   | MODE  | CHAN | RATE       | SIGNAL | BARS | SECURITY |
+|--------+--------+-------+------+------------+--------+------+----------|
+|        | <SSID> | Infra |   11 | 195 Mbit/s |     92 | ▂▄▆█ | WPA2     |

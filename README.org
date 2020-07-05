@@ -64,8 +64,18 @@ and weather challenges.
 - [[https://www.sparkfun.com/products/retired/15430][Leopard Imaging 145 FOV Camera]] : Note that this camera has been
   discontinued. It was originally included in the older [[https://learn.sparkfun.com/tutorials/assembly-guide-for-sparkfun-jetbot-ai-kit][SparkFun
   JetBot AI Kit]].
+- [[https://www.sparkfun.com/products/15449][Edimax 2-in-1 WiFi and Bluetooth 4.0 Adapter]] : Connectivity to the
+  NVIDIA Jetson Nano. [[https://www.sparkfun.com/products/15449][$19.95 at SparkFun]].
 - Motors : TODO
 - Power : TODO
+
+| Component                                    |  Price |
+|----------------------------------------------+--------|
+| NVIDIA Jetson Nano                           |  99.00 |
+| Edimax 2-in-1 WiFi and Bluetooth 4.0 Adapter |  19.95 |
+|----------------------------------------------+--------|
+| Total                                        | 118.95 |
+#+TBLFM: $2=vsum(@2..@-1)
 
 *** Software System
 
