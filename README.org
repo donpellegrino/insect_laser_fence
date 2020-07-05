@@ -37,6 +37,13 @@ TODO - Translate size to requirements for identification
 
 TODO - Translate speed to requirements for response time  
 
+** Candidate Design - Nuke the Entire Site from Orbit
+
+This is the only way to be sure (https://youtu.be/nnHmUk_J6xQ). Note
+that this is assumed to be preferrable to nerve gas. However, the
+installation has a substantial dollar value attached to it and the
+action may not be authorized.
+
 ** Candidate Design - Optical Recognition Laser Turret
 
 A candidate design could be a single laser turret. Optical image
