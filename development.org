@@ -3,10 +3,12 @@
 This document describes Getting Started-style notes and receipes for
 development.
 
-** GNU Emacs and GNU Screen
+** Git, GNU Emacs and GNU Screen
 
 #+BEGIN_SRC bash
 sudo apt install emacs-nox screen
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 #+END_SRC
 
 ** Multi-user Development
