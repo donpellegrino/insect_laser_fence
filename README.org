@@ -33,7 +33,6 @@ from July through the onset of winter.
 | Size                    | TODO                |                              |
 | Speed                   | TODO                |                              |
 
-
 TODO - Translate size to requirements for identification  
 
 TODO - Translate speed to requirements for response time  
@@ -55,8 +54,9 @@ and weather challenges.
 - [[http://www.meccano.com/product/778988618080/meccano---super-construction-set][Erector by Meccano - Super Construction Set]] : Turret assembly and
   component positioning. [[https://www.amazon.com/Meccano-Construction-Motorized-Building-Education/dp/B07C4ZWC1F/ref=sr_1_2?dchild=1&keywords=meccano&qid=1593880029&sr=8-2&th=1][$199.00 (v1) at Amazon]]
 - Laser : TODO
-- Camera : TODO - update with the SparkFun camera for Jetbot product
-  information
+- [[https://www.sparkfun.com/products/retired/15430][Leopard Imaging 145 FOV Camera]] : Note that this camera has been
+  discontinued. It was originally included in the older [[https://learn.sparkfun.com/tutorials/assembly-guide-for-sparkfun-jetbot-ai-kit][SparkFun
+  JetBot AI Kit]].
 - Motors : TODO
 - Power : TODO
 
