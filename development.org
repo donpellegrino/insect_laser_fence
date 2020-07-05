@@ -1,0 +1,39 @@
+* Development
+
+This document describes Getting Started-style notes and receipes for
+development.
+
+** GNU Emacs and GNU Screen
+
+#+BEGIN_SRC bash
+sudo apt install emacs-nox screen
+#+END_SRC
+
+** Multi-user Development
+
+#+BEGIN_SRC bash
+sudo adduser <username>
+sudo adduser <username> sudo
+#+END_SRC
+
+Then add SSH keys for connecting.
+
+** Python Virtual Environment
+
+Ensure the system has python-venv package installed.
+
+#+BEGIN_SRC bash
+sudo apt install python-venv
+python3 -m venv --system-site-packages ~/ilf_env
+source ~/ilf_env/bin/activate
+pip install --upgrade pip
+#+END_SRC
+
+** NVIDIA Deep Learning Institute
+
+See [[https://courses.nvidia.com/courses/course-v1:DLI+C-RX-02+V1]["Getting Started with AI on Jetson Nano"]] for introductory
+information. Example code is in /srv/nvdli-nano and symlinked from the
+jetbot user home directory. The OS image starts Jupyter Lab at boot by
+default on port 8888. It is running as the jetbot user. It can be
+accessed remotely via port forwarding. A good starting point is
+nvdli-nano/hello_camera, which test the camera feed.

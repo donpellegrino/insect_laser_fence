@@ -60,20 +60,23 @@ and weather challenges.
 **** Bill of Materials
 
 - [[https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/][NVIDIA Jetson Nano]] :: Master control system and image processing for
-  target identification. [[https://www.microcenter.com/product/620641/nvidia-jetson-nano-developer-kit---rev-2][$99.00 at Micro Center]]
+     target identification. [[https://www.microcenter.com/product/620641/nvidia-jetson-nano-developer-kit---rev-2][$99.00 at Micro Center]]
 - [[http://www.meccano.com/product/778988618080/meccano---super-construction-set][Erector by Meccano - Super Construction Set]] :: Turret assembly and
-  component positioning. [[https://www.amazon.com/Meccano-Construction-Motorized-Building-Education/dp/B07C4ZWC1F/ref=sr_1_2?dchild=1&keywords=meccano&qid=1593880029&sr=8-2&th=1][$199.00 (v1) at Amazon]]
+     component positioning. [[https://www.amazon.com/Meccano-Construction-Motorized-Building-Education/dp/B07C4ZWC1F/ref=sr_1_2?dchild=1&keywords=meccano&qid=1593880029&sr=8-2&th=1][$199.00 (v1) at Amazon]]
 - [[https://www.sparkfun.com/products/retired/15430][Leopard Imaging 145 FOV Camera]] :: Note that this camera has been
-  discontinued. It was originally included in the older [[https://learn.sparkfun.com/tutorials/assembly-guide-for-sparkfun-jetbot-ai-kit][SparkFun
-  JetBot AI Kit]].
+     discontinued. It was originally included in the older [[https://learn.sparkfun.com/tutorials/assembly-guide-for-sparkfun-jetbot-ai-kit][SparkFun
+     JetBot AI Kit]].
 - [[https://www.sparkfun.com/products/15449][Edimax 2-in-1 WiFi and Bluetooth 4.0 Adapter]] :: Connectivity to the
-  NVIDIA Jetson Nano. [[https://www.sparkfun.com/products/15449][$19.95 at SparkFun]].
+     NVIDIA Jetson Nano. [[https://www.sparkfun.com/products/15449][$19.95 at SparkFun]].
 - Laser :: TODO
 - Galvo :: TODO
 - Power :: TODO
 - Cabinet :: TODO waterproofing enclosure with windows for sensors and
-  lasers. The enclosure could have a mask/shutter to prevent firing
-  beams ouside of the desired area.
+             lasers. The enclosure could have a mask/shutter to
+             prevent firing beams ouside of the desired area. Note
+             that many lasers may have temperature limits beyond
+             typical ambient summer temperature in the target area of
+             operations.
 
 | Component                                    |  Price |
 |----------------------------------------------+--------|
@@ -106,6 +109,10 @@ https://spectrum.ieee.org/consumer-electronics/gadgets/backyard-star-wars
 Myhrvold, N. (Feb 2010). "Could this laser zap malaria?" /TED
 Talks/. Retrieved July 4, 2020, from
 https://www.ted.com/talks/nathan_myhrvold_could_this_laser_zap_malaria
+
+NIVDIA. (2020 Mar 19). "Getting Started with AI on Jetson Nano"
+/NVIDIA Deep Learning Institute/. Retrieved July 5, 2020, from
+https://courses.nvidia.com/courses/course-v1:DLI+C-RX-02+V1/info
 
 Schiller, B. (2016, May 3). "What Happened To The Mosquito-Zapping
 Laser That Was Going To Stop Malaria?" /Fast Company/. Retrieved July
