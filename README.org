@@ -92,9 +92,106 @@ and weather challenges.
 - [[https://www.python.org/][Python]]
 - [[https://opencv.org/][OpenCV]]
 
+**** Milestones [1/8]
+
+1. [X] Jetson Nano environment setup
+
+2. [ ] Raspberry pi environment setup
+
+3. [ ] Can detect target
+
+   Identify a target in a single frame.
+
+   1. [ ] spotted lanternfly
+   2. [ ] mosquito
+
+4. [ ] Can track target
+
+   Track a target through multiple frames.
+
+   1. [ ] spotted lanternfly
+   2. [ ] mosquito
+
+5. [ ] Can locate target
+
+   Translate image position to real world position. Only needed if we
+   will aim the laser with galvos.
+
+6. [ ] Laser functions.
+
+   Test laser functions using a low powered test laser.
+
+   1. [ ] Can engage / disengage test laser
+   2. [ ] Can steer beam on target
+   3. [ ] Can limit beam to bounding box
+   4. [ ] Can coordinate multiple lasers
+
+7. [ ] Kill target
+
+   Equip the kill laser and engage live targets.
+
+   1. [ ] spotted lanternfly
+   2. [ ] mosquito
+
 *** Retroreflective Perimeter Fence
 
 This is the solution described in detail in Kare, 2010.
+
+** Laser Selection
+*** Laser Safety
+**** Eye-safe / Infrared
+
+Eye-safe lasers can still damage eyes, but the damage is done to the
+cornea and will heal. Lasers that aren't eye-safe cause damage to the
+retina which is permanent. Eye-safe lasers have wavelengths longer
+than 1400 nm.
+
+IR Lasers are lasers with wavelengths in the infrared band (400 nm to
+10^6 nm). These pose greater risk to eyes because since they aren't
+visible, they don't trigger the blink reflex, so eyes are more likely
+to be exposed for longer and sustain more damage.
+
+Unfortunately all Eye-safe lasers are also IR. We should get laser
+safety goggles and use them whenever lasers are active.
+
+Some links, will clean up later:
+https://en.wikipedia.org/wiki/Laser_safety
+https://www.rp-photonics.com/eye_safe_lasers.html
+https://seminex.com/lasers-and-eye-safety.aspx/
+
+**** Fire Safety
+
+High powered lasers can pose a fire risk.
+
+When we get the kill laser, we will need to test it with dry leaves in
+a controlled environment to determine how much power is required to
+cause ignition.
+
+**** Bounding Box
+
+We have to prevent the system from sending beams into the sky or
+neighbors' yards/houses. There should be software constraints but
+ideally also a physical shield should block the path of the laser.
+
+*** Strategy
+
+1. Hit the target with multiple beams that are a fraction of the
+   desired kill power. The lasers will intersect at the target
+   position, delivering full power.
+2. Hit the target with multiple short pulses. This allows us to move
+   the beam between pulses, so repeated pulses from each laser will be
+   unlikely to deliver much power to the same ground location and
+   repeatedly hitting an eye would be highly unlikely.
+3. Disable the system if humidity is low to reduce risk of fire.
+4. Use a wide diameter beam to increase the chance of damaging a
+   target's delicate wings.
+
+*** Testing
+We should test with cheap low power (5 mV) lasers with wavelengths in
+the visible light band.  These can be purchased for 10 for $10 in
+assorted colors, which will help if we are calibrating multiple
+turrets.  These are equivalent to the lasers used in standard laser
+pointers.
 
 ** References
 
