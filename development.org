@@ -3,7 +3,7 @@
 This document describes Getting Started-style notes and receipes for
 development.
 
-** Git, GNU Emacs and GNU Screen
+** Git, GNU Emacs, and GNU Screen
 
 #+BEGIN_SRC bash
 sudo apt install emacs-nox screen
@@ -20,6 +20,13 @@ sudo adduser <username> sudo
 
 Then add SSH keys for connecting.
 
+Note that it is not clear if multi-user development is practical on
+the Jetson Nano. Much of the OS image configuration is at the jetbot
+user level or system-wide. In addition, only one process can likely
+use the camera at any one time anyway. Therefore, it may make more
+sense to conceptualize the entire device as a single-user system
+despite the multi-user OS capabilities.
+
 ** Python Virtual Environment
 
 Ensure the system has python-venv package installed.
@@ -30,6 +37,11 @@ python3 -m venv --system-site-packages ~/ilf_env
 source ~/ilf_env/bin/activate
 pip install --upgrade pip
 #+END_SRC
+
+Note, that it is not clear that a virtual environment approach is
+consistent with how OS images are designed for the Jetson Nano. ML/AI
+toolkits are already pre-configured at the jetbot user or the
+system-level.
 
 ** NVIDIA Deep Learning Institute
 
