@@ -43,6 +43,41 @@ TODO - Translate speed to requirements for response time
 
 Currently working on the Laser Turret solution.
 
+*** Bill of Materials
+
+- [[https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/][NVIDIA Jetson Nano]] :: Master control system and image processing for
+     target identification. [[https://www.microcenter.com/product/620641/nvidia-jetson-nano-developer-kit---rev-2][$99.00 at Micro Center]]
+- [[http://www.meccano.com/product/778988618080/meccano---super-construction-set][Erector by Meccano - Super Construction Set]] :: Turret assembly and
+     component positioning. [[https://www.amazon.com/Meccano-Construction-Motorized-Building-Education/dp/B07C4ZWC1F/ref=sr_1_2?dchild=1&keywords=meccano&qid=1593880029&sr=8-2&th=1][$199.00 (v1) at Amazon]]
+- [[https://www.sparkfun.com/products/retired/15430][Leopard Imaging 145 FOV Camera]] :: Note that this camera has been
+     discontinued. It was originally included in the older [[https://learn.sparkfun.com/tutorials/assembly-guide-for-sparkfun-jetbot-ai-kit][SparkFun
+     JetBot AI Kit]].
+- [[https://www.sparkfun.com/products/15449][Edimax 2-in-1 WiFi and Bluetooth 4.0 Adapter]] :: Connectivity to the
+     NVIDIA Jetson Nano. [[https://www.sparkfun.com/products/15449][$19.95 at SparkFun]].
+- Laser :: TODO
+- Galvo :: TODO
+- Power :: TODO
+- Cabinet :: TODO waterproofing enclosure with windows for sensors and
+             lasers. The enclosure could have a mask/shutter to
+             prevent firing beams ouside of the desired area. Note
+             that many lasers may have temperature limits beyond
+             typical ambient summer temperature in the target area of
+             operations.
+
+| Component                                    |  Price |
+|----------------------------------------------+--------|
+| NVIDIA Jetson Nano                           |  99.00 |
+| Edimax 2-in-1 WiFi and Bluetooth 4.0 Adapter |  19.95 |
+|----------------------------------------------+--------|
+| Total                                        | 118.95 |
+#+TBLFM: $2=vsum(@2..@-1)
+
+*** Software System
+
+- [[https://developer.nvidia.com/embedded/jetpack][NVIDIA JetPack SDK]]
+- [[https://www.python.org/][Python]]
+- [[https://opencv.org/][OpenCV]]
+
 *** Options
 **** Platform Options
 - Fixed Platform :: Camera and laser are fixed in place; lasers are
@@ -147,41 +182,6 @@ deployment of the turret in a area with moderate to high density of
 spotted lanternfly. The turret would be manned and operated in a
 semi-autonomous mode. Semi-autonomous deployment would mitigate safety
 and weather challenges.
-
-**** Bill of Materials
-
-- [[https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-nano/][NVIDIA Jetson Nano]] :: Master control system and image processing for
-     target identification. [[https://www.microcenter.com/product/620641/nvidia-jetson-nano-developer-kit---rev-2][$99.00 at Micro Center]]
-- [[http://www.meccano.com/product/778988618080/meccano---super-construction-set][Erector by Meccano - Super Construction Set]] :: Turret assembly and
-     component positioning. [[https://www.amazon.com/Meccano-Construction-Motorized-Building-Education/dp/B07C4ZWC1F/ref=sr_1_2?dchild=1&keywords=meccano&qid=1593880029&sr=8-2&th=1][$199.00 (v1) at Amazon]]
-- [[https://www.sparkfun.com/products/retired/15430][Leopard Imaging 145 FOV Camera]] :: Note that this camera has been
-     discontinued. It was originally included in the older [[https://learn.sparkfun.com/tutorials/assembly-guide-for-sparkfun-jetbot-ai-kit][SparkFun
-     JetBot AI Kit]].
-- [[https://www.sparkfun.com/products/15449][Edimax 2-in-1 WiFi and Bluetooth 4.0 Adapter]] :: Connectivity to the
-     NVIDIA Jetson Nano. [[https://www.sparkfun.com/products/15449][$19.95 at SparkFun]].
-- Laser :: TODO
-- Galvo :: TODO
-- Power :: TODO
-- Cabinet :: TODO waterproofing enclosure with windows for sensors and
-             lasers. The enclosure could have a mask/shutter to
-             prevent firing beams ouside of the desired area. Note
-             that many lasers may have temperature limits beyond
-             typical ambient summer temperature in the target area of
-             operations.
-
-| Component                                    |  Price |
-|----------------------------------------------+--------|
-| NVIDIA Jetson Nano                           |  99.00 |
-| Edimax 2-in-1 WiFi and Bluetooth 4.0 Adapter |  19.95 |
-|----------------------------------------------+--------|
-| Total                                        | 118.95 |
-#+TBLFM: $2=vsum(@2..@-1)
-
-**** Software System
-
-- [[https://developer.nvidia.com/embedded/jetpack][NVIDIA JetPack SDK]]
-- [[https://www.python.org/][Python]]
-- [[https://opencv.org/][OpenCV]]
 
 *** Retroreflective Perimeter Fence
 
