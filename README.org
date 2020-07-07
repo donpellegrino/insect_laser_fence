@@ -78,17 +78,39 @@ Currently working on the Laser Turret solution.
 - [[https://www.python.org/][Python]]
 - [[https://opencv.org/][OpenCV]]
 
-*** Options
+*** Open Choices
 **** Platform Options
+
 - Fixed Platform :: Camera and laser are fixed in place; lasers are
   aimed using galvos.
 - Moving Platform :: Camera and laser are mounted to a vehicle; lasers
   are aimed by driving the vehicle using servo motors.
+
 **** Camera Options
-- Single Camera :: Callibrate laser beam angles to video positions.
-- Stereoscopic Vision :: Use two cameras to locate objects in real
-  world coordinates ([[https://docs.opencv.org/4.2.0/dd/d53/tutorial_py_depthmap.html][ref]]). This doesn't look precise enough to find
-  the depth of an insect.
+
+***** Single Camera
+
+Callibrate laser beam angles to video positions.
+
+This suffers from parallax error. Kane mentions this but doesn't
+address it. There are solutions to create depth maps using a single
+camera ([[https://ieeexplore.ieee.org/document/4160954][MonoSLAM]], [[https://vision.in.tum.de/research/vslam/lsdslam][LSD-SLAM]]), but they require a moving camera in a
+static environment. We could estimate depth based on camera focus if
+we could get that information from the camera and it was able to focus
+on the insect, but this is not likely.
+
+One option is to accept that we don't have depth, and the insect could
+be anywhere from the nearest point the camera can see to its farthest
+point, and straffe the laser from one to the other. The drawback is
+that this is more laser energy that will strike the background.
+
+***** Stereoscopic Vision
+
+Use two cameras to locate objects in real world coordinates
+([[https://docs.opencv.org/4.2.0/dd/d53/tutorial_py_depthmap.html][ref]]).
+
+This doesn't look precise enough to find the depth of an
+insect.
 
 *** Milestones [1/6]
 
