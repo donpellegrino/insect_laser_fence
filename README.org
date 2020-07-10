@@ -211,27 +211,31 @@ an idea of what different power ratings mean.
 
 Using a laser more powerful than necessary increases risk of injury
 and fire. We need to determine the minimum power required for the
-laser diode that can be used to kill the target. According to Kare, it
-takes 50-100 mJ to kill a mosquito. This table shows how long we'll
-have to keep beams of differing power on the insect to kill it.
+laser diode that can be used to kill the target. According to Kare, "a
+few tens of millijoules, delivered within a few milliseconds, will
+cause most mosquitoes to expire within 24 hours." This table shows how
+long we'll have to keep beams of differing power on the insect to kill
+it.
 
-| Desired Energy (mJ) | Diode Power (mW) | Required Time (s) |
-|---------------------+------------------+-------------------|
-|                  50 |                5 |             10.00 |
-|                  50 |               50 |              1.00 |
-|                  50 |              100 |              0.50 |
-|                  50 |              200 |              0.25 |
-|                 100 |                5 |             20.00 |
-|                 100 |               50 |              2.00 |
-|                 100 |              100 |              1.00 |
-|                 100 |              200 |              0.50 |
-#+TBLFM: $3=$1/$2;%.2f
+| Desired Energy (mJ) | Diode Power (mW) | Required Time (ms) |
+|---------------------+------------------+--------------------|
+|                  20 |                5 |        4000.000000 |
+|                  20 |               50 |         400.000000 |
+|                  20 |              100 |         200.000000 |
+|                  20 |              200 |         100.000000 |
+|                  20 |             5000 |           4.000000 |
+|                  30 |                5 |        6000.000000 |
+|                  30 |               50 |         600.000000 |
+|                  30 |              100 |         300.000000 |
+|                  30 |              200 |         150.000000 |
+|                  30 |             5000 |           6.000000 |
+#+TBLFM: $3=($1/$2)*1000;%f
 
-I suspect we won't be able to keep a laser on a flying insect for 10
-to 20 seconds, and over so much time the insect may shed enough energy
-to extend the required time. One to two seconds seems manageable,
-though. I think we should test with a 50 mW diode as an initial kill
-laser. 50 mW lasers are easy to find in the $15-$20 range.
+High power is required to get tens of mJ on target in single digit
+miliseconds, but the turret design may allow us to hit the target
+repeatedly in a fairly short time period. I think we should test with
+a 50 mW diode as an initial kill laser. 50 mW lasers are easy to find
+in the $15-$20 range.
 
 *** Strategy
 
