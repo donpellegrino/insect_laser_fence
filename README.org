@@ -92,7 +92,7 @@ Currently working on the Laser Turret solution.
 
 Callibrate laser beam angles to video positions.
 
-This suffers from parallax error. Kane mentions this but doesn't
+This suffers from parallax error. Kare mentions this but doesn't
 address it. There are solutions to create depth maps using a single
 camera ([[https://ieeexplore.ieee.org/document/4160954][MonoSLAM]], [[https://vision.in.tum.de/research/vslam/lsdslam][LSD-SLAM]]), but they require a moving camera in a
 static environment. We could estimate depth based on camera focus if
@@ -131,6 +131,44 @@ insect.
    1. [ ] spotted lanternfly
    2. [ ] mosquito
 
+** Camera Selection
+
+*** Features
+
+- Interface :: Data interface between camera and computer. Prefer the
+  fastest interface available. Kare remarked that USB may be too slow.
+- Night Vision :: Usually cameras with night vision include infrared
+  LEDs and detect infrared wavelengths. At night these cameras produce
+  black and white images.
+- IR-cutoff :: Switches between day and night modes. Generally
+  improves both day and night image quality but may cut back and forth
+  at dawn and dusk.
+- Distortion :: Fisheye lenses have high visual distortion. This will
+  make it more difficult to map pixels to real world positions.
+- Case / Mount :: A weather proof protective case would be a
+  plus. Also we want a case that can be securely mounted to the
+  platform. This matters because we'll need to recalibrate every time
+  the camera shifts.
+- Resolution :: Prefer higher resolution, since we're looking for bugs
+  and bugs are small.
+- Refresh Rate :: Prefer 60 fps or more, which is widely available.
+- Focus :: Manual or autofocus.
+
+*** Product Categories
+
+- Single board computer components :: There are several cameras made
+  for single board computers, such as Raspberry Pi and Jetson Nano.
+  These connect to the board with a CSI port. Many provide night
+  vision. Some have fisheye lenses. Most of these do not come with a
+  case and may be difficult to mount. Most are manual focus.
+- Security cams :: These are CCTV cameras. Many are USB; some use an
+  analog cable. Most include night vision and IR LEDs with
+  IR-cutoff. These usually come in a weather proof cases and would be
+  easy to mount securely. Most are manual focus.
+- Webcam :: These are usually USB. These come with a plastic
+  case. Usually these can be mounted easily but aren't weather
+  proof. Some of these support night vision. Most are autofocus.
+
 ** Laser Selection
 *** Laser Safety
 **** Eye-safe / Infrared
@@ -140,8 +178,8 @@ cornea and will heal. Lasers that aren't eye-safe cause damage to the
 retina which is permanent. Eye-safe lasers have wavelengths longer
 than 1400 nm.
 
-IR Lasers are lasers with wavelengths in the infrared band (400 nm to
-10^6 nm). These pose greater risk to eyes because since they aren't
+IR Lasers are lasers with wavelengths in the infrared band (700 nm to
+1 mm). These pose greater risk to eyes because since they aren't
 visible, they don't trigger the blink reflex, so eyes are more likely
 to be exposed for longer and sustain more damage.
 
@@ -167,6 +205,34 @@ We have to prevent the system from sending beams into the sky or
 neighbors' yards/houses. There should be software constraints but
 ideally also a physical shield should block the path of the laser.
 
+*** Power
+Here is a list of [[https://en.wikipedia.org/wiki/Laser#Examples_by_power][laser examples by power]]. It is a good way of getting
+an idea of what different power ratings mean.
+
+Using a laser more powerful than necessary increases risk of injury
+and fire. We need to determine the minimum power required for the
+laser diode that can be used to kill the target. According to Kare, it
+takes 50-100 mJ to kill a mosquito. This table shows how long we'll
+have to keep beams of differing power on the insect to kill it.
+
+| Desired Energy (mJ) | Diode Power (mW) | Required Time (s) |
+|---------------------+------------------+-------------------|
+|                  50 |                5 |             10.00 |
+|                  50 |               50 |              1.00 |
+|                  50 |              100 |              0.50 |
+|                  50 |              200 |              0.25 |
+|                 100 |                5 |             20.00 |
+|                 100 |               50 |              2.00 |
+|                 100 |              100 |              1.00 |
+|                 100 |              200 |              0.50 |
+#+TBLFM: $3=$1/$2;%.2f
+
+I suspect we won't be able to keep a laser on a flying insect for 10
+to 20 seconds, and over so much time the insect may shed enough energy
+to extend the required time. One to two seconds seems manageable,
+though. I think we should test with a 50 mW diode as an initial kill
+laser. 50 mW lasers are easy to find in the $15-$20 range.
+
 *** Strategy
 
 1. Hit the target with multiple beams that are a fraction of the
@@ -181,7 +247,7 @@ ideally also a physical shield should block the path of the laser.
    target's delicate wings.
 
 *** Testing
-We should test with cheap low power (5 mV) lasers with wavelengths in
+We should test with cheap low power (5 mW) lasers with wavelengths in
 the visible light band.  These can be purchased for 10 for $10 in
 assorted colors, which will help if we are calibrating multiple
 turrets.  These are equivalent to the lasers used in standard laser
